@@ -23,5 +23,21 @@
 
 .box-icon{
     font-size: 70px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #E8BD0D;
     
+}
+
+.box-btn{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.inner-box{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
