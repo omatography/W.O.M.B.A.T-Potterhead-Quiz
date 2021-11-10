@@ -1,0 +1,25 @@
+.about-img{
+    height: 100vh;
+    background: url('../../../assets/about-bg.png') center center;
+    background-size: cover;
+}
+
+.about-container{
+    background-color: black;
+}
+
+.btn-wombat{
+    background-color: #120E43;
+    color: white;
+    margin: 10px;
+    border: 1px solid #120E43;
+    font-size: 20px;
+}
+
+.btn-wombat:hover{
+    border: 1px solid white;
+}
+
+.abt-text{
+    font-size: 21px;
+}
