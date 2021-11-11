@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  BaseUrlLogin:"",
-  BaseUrlQuiz:""
+  BaseUrlLogin:"http://localhost:9000/wombatuser/",
+  BaseUrlQuiz:"http://localhost:9000/wombatquiz/",
+  username:"Login Please"
 };
 
 /*

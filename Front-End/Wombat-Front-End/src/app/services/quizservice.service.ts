@@ -1,9 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class QuizserviceService {
+export class QuizService {
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+  
+  }
+
+  fetchallusers(){
+    return this.http.get(environment.BaseUrlQuiz)
+  }
 }
