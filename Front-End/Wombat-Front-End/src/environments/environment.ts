@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   BaseUrlLogin:"http://localhost:9000/wombatuser/",
   BaseUrlQuiz:"http://localhost:9000/wombatquiz/",
-  username:"Login Please"
+  username:"Login Please",
+  resultArray: [1,2,1]
 };
 
 /*

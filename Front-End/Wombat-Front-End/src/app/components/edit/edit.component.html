@@ -1,1 +1,59 @@
-<p>edit works!</p>
+<div class="edit-container">
+    <div class="container">
+        <div class="row" style="height:100px"></div>
+        <h3 class="text-center">id:{{quiz[0].id}} | name: {{quiz[0].name}} </h3>
+        <br>
+        <div class="row">
+            <div class="col-5">
+                <input type="text" class="form-control" name="" id="">
+            </div>
+            <div class="col-3">
+                <input type="text" class="form-control" name="" id="">
+            </div>
+            <div class="col-3">
+                <button class="btn btn-danger">Add Question</button>
+            </div>
+            
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-3">
+                <input type="text" class="form-control" name="" id="">
+            </div>
+            <div class="col-3">
+                <input type="text" class="form-control" name="" id="">
+            </div>
+            <div class="col-3">
+                <input type="text" class="form-control" name="" id="">
+            </div>
+            <div class="col-3">
+                <input type="text" class="form-control" name="" id="">
+            </div>
+        </div>
+        <br>
+        <table class="table table-dark" >
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Question</th>
+                <th scope="col">Options</th>
+                <th scope="col">Answer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let q of this.qnList; let i = index">
+                <th scope="row">{{q.id}}</th>
+                <td>{{q.question}}</td>
+                <td>
+                    <ol>
+                        <li *ngFor="let i of q.options">{{i}}</li>
+                    </ol>
+                </td>
+                <td>{{q.options[q.answer]}}</td>
+              </tr>
+              
+            </tbody>
+          </table>
+    </div>
+    
+</div>

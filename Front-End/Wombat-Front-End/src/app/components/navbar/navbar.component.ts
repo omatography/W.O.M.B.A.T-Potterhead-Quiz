@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class NavbarComponent implements OnInit {
 
-  public username:string = "hii";
+  public username:string = "login please";
   constructor() { }
 
   ngOnInit(): void {

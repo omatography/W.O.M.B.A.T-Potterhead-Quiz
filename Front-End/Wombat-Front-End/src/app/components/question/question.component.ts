@@ -1,7 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Question } from 'src/app/entities/Question';
 import { Quiz } from 'src/app/entities/Quiz';
 import { QuizService } from 'src/app/services/quizservice.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-question',
@@ -21,13 +23,14 @@ export class QuestionComponent implements OnInit {
   public b:any;
   public c:any;
   public d:any;
+  public submit:any;
   ; 
   
 
   
   
   
-  constructor(private quizservice:QuizService,private elRef:ElementRef) {
+  constructor(private quizservice:QuizService,private elRef:ElementRef,private route:Router) {
     
    }
 
@@ -45,6 +48,7 @@ export class QuestionComponent implements OnInit {
        this.b = this.elRef.nativeElement.querySelector('#b');
        this.c = this.elRef.nativeElement.querySelector('#c');
        this.d = this.elRef.nativeElement.querySelector('#d');
+       this.submit = this.elRef.nativeElement.querySelector('#submit');
       this.disprev();
       for(var i=0;i<this.qnList.length; i++){
         this.resultList.push(-1)
@@ -86,7 +90,10 @@ export class QuestionComponent implements OnInit {
   ansa(){
     this.resultList[this.currentQnNo] = 0;
     console.log(this.resultList);
-    
+    if(this.currentQnNo == this.qnList.length -1){
+      this.noborder()
+      this.a.classList.add("white")
+    }
     if(this.currentQnNo >= 0){
       this.enaprev();
     }
@@ -108,7 +115,10 @@ export class QuestionComponent implements OnInit {
   ansb(){
     this.resultList[this.currentQnNo] = 1;
     console.log(this.resultList);
-    
+    if(this.currentQnNo == this.qnList.length -1){
+      this.noborder()
+      this.b.classList.add("white")
+    }
     if(this.currentQnNo >= 0){
       this.enaprev();
     }
@@ -127,7 +137,10 @@ export class QuestionComponent implements OnInit {
   ansc(){
     this.resultList[this.currentQnNo] = 2;
     console.log(this.resultList);
-   
+    if(this.currentQnNo == this.qnList.length -1){
+      this.noborder()
+      this.c.classList.add("white")
+    }
     if(this.currentQnNo >= 0){
       this.enaprev();
     }
@@ -146,7 +159,10 @@ export class QuestionComponent implements OnInit {
   ansd(){
     this.resultList[this.currentQnNo] = 3;
     console.log(this.resultList);
-    
+    if(this.currentQnNo == this.qnList.length -1){
+      this.noborder()
+      this.d.classList.add("white")
+    }
     if(this.currentQnNo >= 0){
       this.enaprev();
     }
@@ -170,11 +186,13 @@ export class QuestionComponent implements OnInit {
   }
 
   disnext(){
-    this.nex.classList.add("d-none")
+    this.nex.classList.add("d-none");
+    this.submit.classList.remove("d-none")
   }
 
   enanext(){
     this.nex.classList.remove("d-none")
+    this.submit.classList.add("d-none")
   }
 
   previous(){
@@ -211,4 +229,11 @@ export class QuestionComponent implements OnInit {
     }
   }
 
+  sub(){
+
+    environment.resultArray = this.resultList;
+    console.log(environment.resultArray)
+    this.route.navigate(['/result']);
+
+  }
 }

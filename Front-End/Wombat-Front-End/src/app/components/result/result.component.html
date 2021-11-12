@@ -4,14 +4,13 @@
 
         <div class="res-box">
             <div class="text-center">
-                <circle-progress class="" [percent]="80" [radius]="80" [outerStrokeWidth]="10" [innerStrokeWidth]="8"
+                <circle-progress class="" [percent]="this.percent" [radius]="80" [outerStrokeWidth]="10" [innerStrokeWidth]="8"
                     [outerStrokeColor]="'#F4BE2C'" [innerStrokeColor]="'#C7E596'" [animation]="true"
                     [animationDuration]="400">
                 </circle-progress>
             </div>
-            <p class="text-center result-para"> <br> Hurray!, you have proved yourself, a True PotterHead. View your
-                detailed score
-                below.</p>
+            <h1 class="text-center">{{this.result[0]}}/{{this.userAns.length}}</h1>
+            <p class="text-center result-para" id="caption">  </p>
             <p class="text-center"><button class="btn btn-wombat " routerLink="/home">Go to Home</button><button class="btn btn-wombat " routerLink="/detailed">View
                     Detailed Result</button><button class="btn btn-wombat" routerLink="">Logout</button></p>
         </div>

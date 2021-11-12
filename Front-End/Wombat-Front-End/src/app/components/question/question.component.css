@@ -116,11 +116,14 @@
 }
 
 .btn-wombat{
-    background-color: #120E43;
+    background-color: #1a1085;
     color: white;
     margin: 10px;
     border: 1px solid #120E43;
-    font-size: 20px;
+    font-size: 22px;
+    position: absolute;
+    bottom: 85px;
+    right: 50px;
     
 }
 
