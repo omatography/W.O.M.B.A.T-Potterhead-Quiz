@@ -30,6 +30,19 @@
     
 }
 
+.btn-wombat{
+    background-color: #120E43;
+    color: white;
+    margin: 10px;
+    border: 1px solid #120E43;
+    font-size: 20px;
+    
+}
+
+.btn-wombat:hover{
+    border: 1px solid white;
+}
+
 .box-btn{
     position: relative;
     left: 50%;

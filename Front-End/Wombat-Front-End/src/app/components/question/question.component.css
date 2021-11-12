@@ -88,6 +88,9 @@
     position: absolute;
     bottom: 70px;
     left: 50px;
+    background-color: #101010;
+    border:0;
+    transition: 0.2s ease-in-out;
 }
 
 .quest-arrow2{
@@ -96,4 +99,31 @@
     position: absolute;
     bottom: 70px;
     right: 50px;
+    border:0;
+    background-color: #101010;
+    transition: 0.2s ease-in-out;
+}
+
+.quest-arrow:hover{
+    transform: scale(1.3);
+}
+
+.white{
+    border-color: white;
+}
+.quest-arrow2:hover{
+    transform: scale(1.3);
+}
+
+.btn-wombat{
+    background-color: #120E43;
+    color: white;
+    margin: 10px;
+    border: 1px solid #120E43;
+    font-size: 20px;
+    
+}
+
+.btn-wombat:hover{
+    border: 1px solid white;
 }

@@ -24,8 +24,11 @@ public class WombatQuizController {
 		return wombatquizRepository.findAll();
 	}
 	
+	
 	@PostMapping("/")
 	public void addQuiz(@RequestBody WombatQuiz wombatquiz){
 		wombatquizRepository.save(wombatquiz);
 	}
+	
+	
 }

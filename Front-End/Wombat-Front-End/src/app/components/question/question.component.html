@@ -1,9 +1,9 @@
-<div class="quest-container">
+<div class="quest-container" >
     <div class="container">
         <div class="row" style="height: 120px;"></div>
         <div class="quest-box">
             <div class="row" style="height: 10px;"></div>
-            <div class=" text-center" style="font-size: 22px; margin:15px;">1 out of 15 Questions</div>
+            <div class=" text-center" style="font-size: 22px; margin:15px;">{{this.currentQnNo + 1}} out of {{this.qnList.length}} Questions</div>
             <div class="row justify-content-center" style="padding: 0;">
                 <div class="col-11 q-box">
                     <p class="q-para"> {{this.currentQn[0].question}}</p>
@@ -12,22 +12,22 @@
             <div class="row justify-content-center">
                 <div class="col-11">
                     <div class="row justify-content-center">
-                        <div class="col-5 ans-g">
-                            <p class="ans-para">
+                        <div class="col-5 ans-g" id="a" (click)="ansa()">
+                            <p class="ans-para" >
                                 {{this.currentQn[0].options[0]}}
                             </p>
                         </div>
-                        <div class="col-5 ans-s" routerLink="/result">
+                        <div class="col-5 ans-s " id="b" (click)="ansb()" >
                             <p class="ans-para">
                                 {{this.currentQn[0].options[1]}}
                             </p>
                         </div>
-                        <div class="col-5 ans-h">
+                        <div class="col-5 ans-h" id="c" (click)="ansc()" >
                             <p class="ans-para">
                                 {{this.currentQn[0].options[2]}}
                             </p>
                         </div>
-                        <div class="col-5 ans-r">
+                        <div class="col-5 ans-r"  id="d" (click)="ansd()">
                             <p class="ans-para">
                                 {{this.currentQn[0].options[3]}}
                             </p>
@@ -37,8 +37,8 @@
             </div>
 
             <div class="row">
-                <p style="margin: 0;"><a href="" class="quest-arrow"><i class="fas fa-chevron-left"></i></a>
-                    <a href="" class="quest-arrow2"><i class="fas fa-chevron-right"></i></a>
+                <p style="margin: 0;"><button id="prev" (click)="previous()" class="quest-arrow" ><i  class="fas fa-chevron-left" ></i></button>
+                    <span id="submit"><button class="quest-arrow2" (click)="next()" id="next"><i class="fas fa-chevron-right"></i></button></span>
                 </p>
             </div>
         </div>
