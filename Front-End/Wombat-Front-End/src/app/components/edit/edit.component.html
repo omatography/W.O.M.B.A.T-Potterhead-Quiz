@@ -3,35 +3,37 @@
         <div class="row" style="height:100px"></div>
         <h3 class="text-center">id:{{quiz[0].id}} | name: {{quiz[0].name}} </h3>
         <br>
-        <div class="row">
-            <div class="col-5">
-                <input type="text" class="form-control" name="" id="">
+        <div class="add-row">
+            <div class="row">
+                <div class="col-5">
+                    <input type="text" class="form-control" name="" #quest placeholder="@Question" id="">
+                </div>
+                <div class="col-3"> 
+                    <input type="text" class="form-control" name="" #ans placeholder="@Answer in index no" id="">
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-danger" (click) = "addQn(quest.value,ans.value,op1.value,op2.value,op3.value,op4.value)">Add Question</button>
+                </div>
+                
             </div>
-            <div class="col-3">
-                <input type="text" class="form-control" name="" id="">
+            <br>
+            <div class="row  ">
+                <div class="col-3">
+                    <input type="text" class="form-control" #op1 placeholder="@Option 0" name="" id="">
+                </div>
+                <div class="col-3">
+                    <input type="text" class="form-control" #op2 placeholder="@Option 1" name="" id="">
+                </div>
+                <div class="col-3">
+                    <input type="text" class="form-control" #op3 placeholder="@Option 2" name="" id="">
+                </div>
+                <div class="col-3">
+                    <input type="text" class="form-control" #op4 placeholder="@Option 3" name="" id="">
+                </div>
             </div>
-            <div class="col-3">
-                <button class="btn btn-danger">Add Question</button>
-            </div>
-            
         </div>
         <br>
-        <div class="row">
-            <div class="col-3">
-                <input type="text" class="form-control" name="" id="">
-            </div>
-            <div class="col-3">
-                <input type="text" class="form-control" name="" id="">
-            </div>
-            <div class="col-3">
-                <input type="text" class="form-control" name="" id="">
-            </div>
-            <div class="col-3">
-                <input type="text" class="form-control" name="" id="">
-            </div>
-        </div>
-        <br>
-        <table class="table table-dark" >
+        <table class="table table-dark question-row" >
             <thead>
               <tr>
                 <th scope="col">Id</th>
@@ -50,6 +52,7 @@
                     </ol>
                 </td>
                 <td>{{q.options[q.answer]}}</td>
+                <td><Button class="btn btn-danger" (click) = "deleteQn(i)">X</Button></td>
               </tr>
               
             </tbody>

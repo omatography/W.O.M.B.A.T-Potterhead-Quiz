@@ -24,6 +24,30 @@ export class EditComponent implements OnInit {
       console.log(this.qnList)
     })
 
+
+    
   }
 
+  addQn(question:string,answer:string,o1:string,o2:string,o3:string,o4:string){
+
+    
+    console.log("J")
+    
+    var options:string[] = [o1,o2,o3,o4];
+    this.quizservice.addQuiz({question,options,answer})
+    .subscribe((res: any) => {
+      console.log(res);
+      this.ngOnInit();
+    });
+  }
+
+  deleteQn(i:number){
+    console.log(i)
+    this.quizservice.deleteQn(i)
+    .subscribe((res:any)=>{
+      console.log(res)
+    })
+    this.ngOnInit()
+
+  }
 }

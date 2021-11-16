@@ -51,4 +51,21 @@ public class WombatQuizController {
 		
 	}
 	
+	@PatchMapping("/{quizid}/deleteqn/{qid}")
+	public void assignQuestion(@PathVariable("quizid") int quizid, @PathVariable("qid") int qid) {
+		System.out.println("Hooo");
+		WombatQuiz quiz = wombatquizRepository.findById(quizid);
+		System.out.println(quiz);
+		List<WombatQuestion> questions = quiz.getQuestions();
+		questions.remove(qid);
+		quiz.setQuestions(questions);
+		
+		
+		wombatquizRepository.save(quiz);
+
+		
+	}
+	
+	
+	
 }

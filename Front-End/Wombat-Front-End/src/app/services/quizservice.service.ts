@@ -14,4 +14,15 @@ export class QuizService {
   fetchallusers(){
     return this.http.get(environment.BaseUrlQuiz)
   }
+
+  addQuiz(quest:any){
+    console.log(quest)
+    
+    return this.http.patch('http://localhost:9000/wombatquiz/14/addqn',quest)
+  }
+
+  deleteQn(i:number){
+    console.log("ser")
+    return this.http.patch('http://localhost:9000/wombatquiz/14/deleteqn/'+ i,{})
+  }
 }
