@@ -13,6 +13,7 @@ import { DetailedResultComponent } from './components/detailed-result/detailed-r
 import { EditComponent } from './components/edit/edit.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+
 const routes:Routes = [
   { path: '', pathMatch: 'full', component:LoginComponent},
   {path:'home', component:HomeComponent },
